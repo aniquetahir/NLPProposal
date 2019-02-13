@@ -1,0 +1,95 @@
+%
+% File acl2019.tex
+%
+%% Based on the style files for ACL 2018, NAACL 2018/19, which were
+%% Based on the style files for ACL-2015, with some improvements
+%%  taken from the NAACL-2016 style
+%% Based on the style files for ACL-2014, which were, in turn,
+%% based on ACL-2013, ACL-2012, ACL-2011, ACL-2010, ACL-IJCNLP-2009,
+%% EACL-2009, IJCNLP-2008...
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[hyperref]{acl2019}
+\usepackage{times}
+\usepackage{latexsym}
+
+\usepackage{url}
+
+\aclfinalcopy % Uncomment this line for the final submission
+%\def\aclpaperid{***} %  Enter the acl Paper ID here
+
+\setlength\titlebox{5cm}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+\newcommand\BibTeX{B\textsc{ib}\TeX}
+
+
+
+\title{Project Proposal}
+
+\author{
+  Rafael Iriya, Ratrapee Techawitthayachinda, Nikhillesh Sadassivam,
+  Anique Tahir\\
+  Arizona State University / Tempe, AZ \\
+  \texttt{\{ririya, ratrapee, nsadassi, artahir \}@asu.edu} \\}
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+  This document contains the proposals for preparing the Natural Language Processing course project for Spring 2019. 
+\end{abstract}
+
+\section{Proposal 1: Conflict Identification}
+
+\subsection{Context}
+Online learning become increasingly vital in the current educational system \cite{kim2009pedagogical}. Due to the advantages in flexibility and convenience, students in both higher education and in K-12 settings grow demand in online learning. A discussion board is used as the main shared space to collaboratively construct knowledge. However, due to the lack of social presence and text-based heavy in the discussion board, students experience difficulties in online communication. Conflicts in communication can occur and be detrimental to learning processes. Instructors need to monitor and regulate conflicts in order to facilitate effective learning. Therefore, we attempt  to develop a tool that helps instructors identify conflicts in the vast body of text such as online discussion board so that instructors could intervene and manage conflicts in a timely manner. 
+
+\subsection{Method}
+We will group parts of texts into categories, at first we believe 4 classes, miscommunication, task, relationship and group process conflicts. We will develop a state of the art neural network architecture for a classification task using these 4 classes. Previous work has been done for this classification task using simpler methods \cite{ravi2007profiling, rose2017artificial}. 
+
+
+
+\subsection{Datasets}
+ At this point we have not been able to find public labeled databases, so we have two approaches for obtaining databases:
+ \begin{itemize}
+     \item Contact the authors of previous works and ask permission to use datasets.
+     \item Build our own datasets using a semi-automated approach.
+ \end{itemize}  
+
+\section{Proposal 2: ARC Challenge Knowledge Hunting}
+\subsection{Context}
+In this project we are tasked with creating a module which extracts knowledge from a KB and select a subset of them for a given question \cite{clark2018think}.  The team at Allen AI has compiled a set of questions using a knowledge base. These questions require reasoning to come up with the solution. All the questions are multiple choice. The challenge of this problem is to create a system which employs some sort of reasoning on the provided knowledge base to answer the questions. Since this task is open to the public, there is a leaderboard for the people attempting to solve it.
+
+\subsection{Method}
+We have not yet decided on the final solution that we will use but we intent to use some type of knowledge encoding to solve this problem. We are thinking about using word2vec combined with Recurrent Neural Networks to solve this problem. Knowledge learning using embeddings might also help us in solving this problem. Sometimes the problem statement for some of the easier questions might have text with overlaps with the provided knowledge. In cases like these, simple text similarity might also help. 
+
+
+\subsection{Datasets}
+The data for this problem is provided by Allen AI. It includes a set of science questions which require knowledge of the context. There is a corpus containing knowledge but its use is completely optional. In fact, the challenge states that we can do knowledge learning from our own datasets as well. The data is divided into a challenge set and an easy set. Each set is further subdivided into three categories: a training set, test set and a dev set. 
+
+\section{Proposal 3: Visual Commonsense Reasoning}
+
+The idea of this project is to expand image recognition to image understanding, which involves establishing cognitive reasoning between elements in the image. The challenge is translating pixels into cognitive ideas that are very easy for the human brain to capture, but not for a machine. Initial research has been done in this area but results are still far from human performance (65\% vs 90\%) \cite{zellers2018recognition}.
+
+
+\subsection{Method}
+
+We plan to boost the perfomance of the previous works by employing state of the art neural network models combining NLP and convolutional neural networks. We will explore different vector encodings and architectures, along with the use of additional knowledge datasets, to add common sense information into the images.
+
+\subsection{Datasets}
+The dataset for this problem would include a set of images and a set of multiple choice questions. The images show some sort of story while the text based questions ask something about the story. The images that will be provided with this dataset will have some labels. The labels have a location associated with them i.e. the labels tell us the part of the image which they are associated with. 
+The text based questions in the dataset might refer to something in the images. In this case labels might be used to refer to entities in the image. For example, an image might contain four people. Each person might be given their own label. When the text wants to refer to a specific person in the image, it might use the label associated with the person.
+
+% include your own bib file like this:
+\bibliographystyle{acl_natbib}
+\bibliography{acl2019}
+
+\end{document}
